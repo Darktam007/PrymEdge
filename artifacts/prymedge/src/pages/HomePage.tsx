@@ -238,9 +238,19 @@ export default function HomePage() {
       {/* HERO */}
       <section
         ref={heroRef}
-        className="hero-bg"
-        style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}
+        style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "7rem 1.5rem 4rem", position: "relative", overflow: "hidden", background: "#050505" }}
       >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0, opacity: 0.7 }}
+          src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-luxury-hotel-and-pool-4161-small.mp4"
+          poster="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&auto=format&q=60"
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.88) 100%)", zIndex: 1, pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 15% 65%, rgba(240,90,0,0.18) 0%, transparent 52%)", zIndex: 1, pointerEvents: "none" }} />
         <div style={{ maxWidth: "860px", textAlign: "center", position: "relative", zIndex: 2 }}>
           <motion.p
             initial={{ opacity: 0 }}
@@ -328,6 +338,22 @@ export default function HomePage() {
               </AnimatedSection>
             ))}
           </div>
+
+          <AnimatedSection>
+            <div style={{ position: "relative", borderRadius: "8px", overflow: "hidden", marginBottom: "3.5rem", height: "320px" }}>
+              <img
+                src="https://images.unsplash.com/photo-1559508551-44bff1de756b?w=1400&auto=format&q=75"
+                alt="Hotel corridor"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.5) 100%)" }} />
+              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", padding: "2rem 3rem" }}>
+                <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.3rem, 3vw, 2rem)", color: "#ffffff", fontStyle: "italic", maxWidth: "480px", lineHeight: 1.4 }}>
+                  "The best hotels in the world aren't just beautiful places to stay — they're stories people want to be part of."
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
 
           <AnimatedSection>
             <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.2rem, 3vw, 1.8rem)", color: "#ffffff", textAlign: "center", fontStyle: "italic" }}>
@@ -443,7 +469,23 @@ export default function HomePage() {
           <AnimatedSection>
             <p className="eyebrow" style={{ marginBottom: "1.25rem" }}>The Partnership</p>
           </AnimatedSection>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "4rem", alignItems: "start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
+            <AnimatedSection delay={0.1} style={{ gridColumn: "span 1" }}>
+              <div style={{ position: "relative", borderRadius: "8px", overflow: "hidden", height: "500px" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&auto=format&q=80"
+                  alt="Luxury hotel lobby"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.05) 60%)" }} />
+                <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem" }}>
+                  <span style={{ display: "inline-block", background: "#F05A00", color: "#fff", fontFamily: "'Inter', sans-serif", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", padding: "0.4rem 0.85rem", borderRadius: "3px" }}>
+                    Your Growth Partner
+                  </span>
+                </div>
+              </div>
+            </AnimatedSection>
+            <div>
             <AnimatedSection>
               <h2 className="section-headline" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", marginBottom: "1.5rem" }}>
                 You Run the Hotel.<br />
@@ -480,6 +522,7 @@ export default function HomePage() {
                 ))}
               </ul>
             </AnimatedSection>
+            </div>
           </div>
 
           <AnimatedSection delay={0.2}>
@@ -491,49 +534,120 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* LEAD MAGNETS */}
-      <section style={{ padding: "6rem 1.5rem", background: "#0a0a0a" }}>
+      {/* LEAD MAGNETS INTRO */}
+      <section style={{ padding: "6rem 1.5rem 2rem", background: "#0a0a0a" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <AnimatedSection>
             <p className="eyebrow" style={{ marginBottom: "1rem" }}>Start Here</p>
-            <h2 className="section-headline" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: "3rem" }}>
+            <h2 className="section-headline" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
               Three Ways to Begin<br />
               Working With PrymEdge.
             </h2>
           </AnimatedSection>
+        </div>
+      </section>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
-            {magnets.map((m, i) => (
-              <AnimatedSection key={i} delay={i * 0.15}>
-                <div
-                  className="card-glow"
-                  data-testid={`magnet-card-${i}`}
-                  style={{
-                    background: "#111",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                    borderRadius: "6px",
-                    padding: "2rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1rem",
-                    height: "100%",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.15rem", fontWeight: 600, color: "#f5f5f5" }}>{m.title}</h3>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.75, flex: 1 }}>{m.body}</p>
-                  <Link href="/contact">
-                    <button
-                      data-testid={`magnet-cta-${i}`}
-                      className="pe-btn-orange"
-                      style={{ padding: "0.65rem 1.25rem", borderRadius: "4px", fontFamily: "'Inter', sans-serif", fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.05em", cursor: "pointer", border: "none", textTransform: "uppercase", width: "100%", marginTop: "auto" }}
-                    >
-                      {m.cta}
-                    </button>
-                  </Link>
+      {/* LEAD MAGNET 1 — Audit */}
+      <section style={{ padding: "5rem 1.5rem", background: "#0a0a0a" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
+            <AnimatedSection>
+              <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "5rem", fontWeight: 700, color: "rgba(240,90,0,0.10)", lineHeight: 1, display: "block", marginBottom: "-0.5rem" }}>01</span>
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 700, color: "#f5f5f5", marginBottom: "1rem", lineHeight: 1.2 }}>
+                Free Hotel Brand<br />&amp; Booking Audit
+              </h3>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.8, marginBottom: "2rem" }}>
+                We review your hotel's online presence, brand perception, and booking journey — then show you exactly where growth is being lost and what to fix first. No obligation. No templates. A real strategic review.
+              </p>
+              <Link href="/contact">
+                <button data-testid="magnet-cta-0" className="pe-btn-orange" style={{ padding: "0.85rem 2rem", borderRadius: "4px", fontFamily: "'Inter', sans-serif", fontSize: "0.82rem", fontWeight: 600, letterSpacing: "0.06em", cursor: "pointer", border: "none", textTransform: "uppercase" }}>
+                  Request Your Free Audit
+                </button>
+              </Link>
+            </AnimatedSection>
+            <AnimatedSection delay={0.15}>
+              <div style={{ position: "relative", borderRadius: "8px", overflow: "hidden", height: "420px" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&auto=format&q=80"
+                  alt="Luxury hotel exterior"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(240,90,0,0.18) 0%, rgba(0,0,0,0.35) 100%)" }} />
+                <div style={{ position: "absolute", top: "1.5rem", right: "1.5rem", background: "rgba(0,0,0,0.7)", backdropFilter: "blur(8px)", border: "1px solid rgba(240,90,0,0.4)", borderRadius: "6px", padding: "1rem 1.25rem" }}>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.7rem", color: "#F05A00", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.2rem" }}>Included</p>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.5 }}>Brand review<br />Booking journey audit<br />Growth gap report</p>
                 </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* LEAD MAGNET 2 — Content Strategy */}
+      <section style={{ padding: "5rem 1.5rem", background: "#0d0d0d" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
+            <AnimatedSection delay={0.1}>
+              <div style={{ position: "relative", borderRadius: "8px", overflow: "hidden", height: "420px" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=900&auto=format&q=80"
+                  alt="Hotel interior"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 100%)" }} />
+                <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem", right: "1.5rem" }}>
+                  <div style={{ background: "rgba(240,90,0,0.92)", borderRadius: "5px", padding: "0.85rem 1.1rem" }}>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff", opacity: 0.85 }}>What you receive</p>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", color: "#fff", fontStyle: "italic", marginTop: "0.2rem" }}>A content direction tailored to your property — not a template.</p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection>
+              <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "5rem", fontWeight: 700, color: "rgba(240,90,0,0.10)", lineHeight: 1, display: "block", marginBottom: "-0.5rem" }}>02</span>
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 700, color: "#f5f5f5", marginBottom: "1rem", lineHeight: 1.2 }}>
+                Hospitality Content<br />Strategy Session
+              </h3>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.8, marginBottom: "2rem" }}>
+                We map a content direction tailored to your property — designed to improve guest perception, strengthen your digital presence, and support direct bookings from the right audience.
+              </p>
+              <Link href="/contact">
+                <button data-testid="magnet-cta-1" className="pe-btn-orange" style={{ padding: "0.85rem 2rem", borderRadius: "4px", fontFamily: "'Inter', sans-serif", fontSize: "0.82rem", fontWeight: 600, letterSpacing: "0.06em", cursor: "pointer", border: "none", textTransform: "uppercase" }}>
+                  Request Content Strategy
+                </button>
+              </Link>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* LEAD MAGNET 3 — Revenue Growth */}
+      <section style={{ padding: "0", background: "#0a0a0a", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "relative", minHeight: "520px", display: "flex", alignItems: "center" }}>
+          <img
+            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1400&auto=format&q=75"
+            alt="Luxury hotel room"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.82) 45%, rgba(0,0,0,0.5) 100%)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 10% 50%, rgba(240,90,0,0.14) 0%, transparent 55%)" }} />
+          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "5rem 1.5rem", position: "relative", zIndex: 1, width: "100%" }}>
+            <div style={{ maxWidth: "560px" }}>
+              <AnimatedSection>
+                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "5rem", fontWeight: 700, color: "rgba(240,90,0,0.12)", lineHeight: 1, display: "block", marginBottom: "-0.5rem" }}>03</span>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 700, color: "#f5f5f5", marginBottom: "1rem", lineHeight: 1.2 }}>
+                  Revenue Growth<br />Consultation
+                </h3>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.72)", lineHeight: 1.8, marginBottom: "2rem" }}>
+                  A focused conversation about where your hotel's revenue systems are underperforming — and how targeted improvements to acquisition, conversion, and brand can change the numbers.
+                </p>
+                <Link href="/contact">
+                  <button data-testid="magnet-cta-2" className="pe-btn-orange" style={{ padding: "0.85rem 2rem", borderRadius: "4px", fontFamily: "'Inter', sans-serif", fontSize: "0.82rem", fontWeight: 600, letterSpacing: "0.06em", cursor: "pointer", border: "none", textTransform: "uppercase" }}>
+                    Book Growth Consultation
+                  </button>
+                </Link>
               </AnimatedSection>
-            ))}
+            </div>
           </div>
         </div>
       </section>

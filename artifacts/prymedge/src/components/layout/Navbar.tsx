@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoDark from "@assets/IMG_20260525_154541_227_1779720696567.png";
+import logoDark from "@assets/IMG_20260525_155551_052_1779721597720.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
