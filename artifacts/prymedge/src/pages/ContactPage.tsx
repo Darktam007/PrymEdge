@@ -87,7 +87,7 @@ export default function ContactPage() {
   const onSubmit = async (data: FormData) => {
     setSubmitting(true);
     try {
-      const res = await fetch("https://formspree.io/f/xdkozwdz", {
+      const res = await fetch("https://formspree.io/f/xkoeqnee", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
