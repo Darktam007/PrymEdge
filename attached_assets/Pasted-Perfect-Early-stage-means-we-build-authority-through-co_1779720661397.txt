@@ -1,0 +1,461 @@
+Perfect. Early stage means we build authority through conviction, specificity, and strategic framing — not fake numbers. Here is the full homepage copy, all 8 sections, 3 lead magnets, FAQ, and footer, written as a curated experience with animation direction embedded throughout.
+
+---
+
+# PRYMEDGE — FULL HOMEPAGE COPY WITH ANIMATION DIRECTION
+
+---
+
+## GLOBAL ANIMATION RULES (apply site-wide)
+
+- All entrances: fade + 24px upward translate, ease-out, 600ms
+- Stagger between elements: 120ms delay
+- Hover states: 200ms ease-out, no bounce
+- Section transitions: opacity fade only, 400ms
+- No element animates twice
+- Motion stops if user has reduced-motion enabled
+
+---
+
+## SECTION 1 — HERO
+
+**Animation:**
+Logo fades in first (300ms). Headline reveals word by word, left to right, 60ms stagger per word. Subtext fades in after headline completes. CTA buttons slide up together 200ms after subtext. Background: slow cinematic hotel footage, 70% dark indigo overlay, subtle 8% scale drift over 20 seconds on loop. No cuts.
+
+---
+
+**[EYEBROW — small caps, tracked out, orange]**
+HOSPITALITY GROWTH SYSTEMS
+
+**[HEADLINE — large, white, editorial weight]**
+Your Hotel Is Better Than
+How It Looks Online.
+
+**[SUBHEADLINE — medium, white at 70% opacity]**
+Most hotels lose bookings not because their rooms are lacking — but because their brand, story, and online presence fail to create desire before a guest ever arrives.
+
+PrymEdge builds the systems that fix this.
+
+**[PRIMARY CTA — orange button]**
+Get Your Free Hotel Audit
+
+**[SECONDARY CTA — ghost/outline button]**
+See How It Works
+
+---
+
+**Design note:** Hero should feel like opening a luxury hotel's coffee table book. Slow. Intentional. The headline lands like a quiet truth, not a sales pitch.
+
+---
+
+## SECTION 2 — THE PROBLEM
+
+**Animation:**
+Section title fades in on scroll entry. Each problem block staggers in left to right, 120ms apart. On mobile, stagger top to bottom. No cards — use clean editorial rows with a thin left-border accent in orange.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+THE REAL PROBLEM
+
+**[HEADLINE — white, editorial]**
+Your Guests Decide Before They Arrive.
+Most Hotels Are Losing Them Before That Decision Is Made.
+
+**[BODY — white at 65% opacity, measured pace]**
+A hotel owner invests in rooms, staff, and service. But guests don't experience any of that until they book. Before the booking, all they have is perception.
+
+And perception is built online.
+
+**[PROBLEM BLOCKS — 3 columns on desktop, stacked on mobile]**
+
+**Weak Brand Identity**
+Your hotel looks like every other hotel online. No clear character. No emotional pull. Nothing that makes a guest stop scrolling and feel something.
+
+**No Storytelling System**
+You're posting content without a direction. Random visuals, inconsistent tone, no narrative thread. Guests see activity but feel nothing.
+
+**Broken Conversion Journey**
+People find your hotel, look at your page or website, and leave without booking. The interest exists. The system to capture it doesn't.
+
+**[CLOSING LINE — slightly larger, white, centered]**
+This is not a content problem.
+This is a systems problem.
+
+---
+
+## SECTION 3 — HOW WE DO IT FOR YOU
+
+**Animation:**
+Section headline fades in. Three cards appear with staggered entrance (150ms apart). On hover: card lifts 5px, shadow deepens, faint orange border glow appears on top edge only, micro underline animates under card title. Cards feel alive but never loud.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+HOW WE DO IT FOR YOU
+
+**[HEADLINE — white]**
+Three Ways PrymEdge
+Moves Your Hotel Forward.
+
+**[CARD 1]**
+**How We Grow Your Revenue**
+
+We don't guess at what's broken. We diagnose your hotel's entire growth infrastructure — then rebuild the parts that are leaking revenue. From how you're perceived online to how inquiries are handled, every touchpoint becomes a revenue system.
+
+- Improve occupancy rates
+- Increase guest spending per stay
+- Optimize pricing perception
+- Fix revenue leaks in your booking flow
+
+**[CARD 2]**
+**How We Get You Direct Bookings**
+
+Third-party platforms take your margin and own your guest relationship. We build the acquisition and conversion systems that bring guests directly to you — and make sure they actually complete the booking.
+
+- Increase direct reservations
+- Reduce platform dependency
+- Improve inquiry-to-booking conversion
+- Build owned audience systems
+
+**[CARD 3]**
+**How We Build Your Brand's Desirability**
+
+Guests choose hotels they feel something about. We build the brand identity, storytelling, and visual direction that makes your hotel emotionally compelling — so guests choose you before they even compare prices.
+
+- Define your hotel's unique positioning
+- Build consistent visual and verbal identity
+- Create storytelling that converts attention into desire
+- Ensure every touchpoint reinforces your brand
+
+---
+
+## SECTION 4 — THE PRYMEDGE SYSTEM
+
+**Animation:**
+Dark section background shifts slightly lighter on scroll entry (atmospheric). Headline fades in. Three system blocks appear sequentially — each with a numbered indicator that draws a thin line downward to the next, creating a visual chain. On desktop this is horizontal. On mobile, vertical. The line draws slowly (800ms per segment) as the user scrolls into view.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+THE PRYMEDGE SYSTEM
+
+**[HEADLINE — white, large]**
+Three Systems.
+One Outcome: A Hotel That Grows.
+
+**[BODY — white at 65% opacity]**
+Most hospitality businesses treat marketing as a series of disconnected tasks. PrymEdge operates differently. We build three interconnected systems designed to work together — so that growth compounds over time rather than resets every month.
+
+---
+
+**[SYSTEM 1]**
+**01 — Perception System**
+*Brand & Identity*
+
+Before a guest books, they form a judgment. We control what that judgment is. Brand positioning, visual identity, storytelling architecture, and emotional direction — designed to make your hotel feel like the obvious choice.
+
+**[SYSTEM 2]**
+**02 — Acquisition System**
+*Marketing & Visibility*
+
+You cannot convert guests who never find you. We build the campaigns, content strategies, and paid acquisition systems that place your hotel in front of the right guests at the right moment — consistently.
+
+**[SYSTEM 3]**
+**03 — Conversion System**
+*Bookings & Revenue*
+
+Visibility without conversion is wasted investment. We optimize every step of the booking journey — from the first Instagram post to the final payment — so that interest becomes revenue reliably.
+
+---
+
+**[CLOSING STATEMENT — centered, slightly larger, white]**
+Most agencies manage one of these.
+PrymEdge builds all three — and connects them.
+
+---
+
+## SECTION 5 — SERVICES
+
+**Animation:**
+Section uses a clean accordion or tab system. Default state shows all 7 service titles with a thin dividing line between each. On hover, the line glows faintly orange. On click or hover-expand: content reveals downward with smooth height animation (500ms ease-out). Icon rotates 45 degrees on expand. No jarring reflow.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+OUR SYSTEMS
+
+**[HEADLINE — white]**
+Hospitality Growth Services
+Built Around One Thing: Revenue.
+
+**[INTRO BODY — white at 65% opacity]**
+Every service PrymEdge offers exists to move a specific business needle — perception, acquisition, or conversion. Nothing is decorative. Everything connects to your hotel's growth.
+
+---
+
+**[SERVICE 1]**
+**Hospitality Brand Positioning System**
+
+Your hotel needs an identity that stands apart. We define your positioning, articulate what makes your property emotionally compelling, and build the brand architecture that everything else runs on.
+
+*Improves: guest desirability, perceived value, premium pricing ability*
+
+---
+
+**[SERVICE 2]**
+**Hospitality Content & Storytelling System**
+
+Content without strategy is noise. We build a storytelling system with clear direction, emotional narrative, and consistent visual language — so every post, campaign, and caption builds toward a brand guests want to experience.
+
+*Improves: online presence, audience engagement, emotional connection*
+
+---
+
+**[SERVICE 3]**
+**Direct Booking & Conversion System**
+
+We audit and rebuild your booking journey — from first impression to completed reservation. WhatsApp inquiry flows, website conversion paths, offer structuring, and response systems that turn interest into confirmed bookings.
+
+*Improves: direct booking rate, inquiry conversion, revenue per visitor*
+
+---
+
+**[SERVICE 4]**
+**Hospitality Guest Acquisition System**
+
+We design and run paid and organic acquisition campaigns targeted at the right guests for your property — using Meta, TikTok, and content-driven strategies that compound over time.
+
+*Improves: visibility, audience growth, cost per booking*
+
+---
+
+**[SERVICE 5]**
+**Website & Digital Experience System**
+
+Your website is your most important salesperson. We audit, redesign, and optimize your digital presence to ensure it converts visitors into guests — with the speed, clarity, and emotional impact that drives decisions.
+
+*Improves: website conversion, digital trust, guest first impression*
+
+---
+
+**[SERVICE 6]**
+**Hospitality Offer & Revenue Strategy System**
+
+We help you structure your offers, packages, and pricing in a way that increases average guest spend, improves perceived value, and creates genuine reasons to book directly rather than through third-party platforms.
+
+*Improves: revenue per guest, offer clarity, booking incentives*
+
+---
+
+**[SERVICE 7]**
+**Hospitality Staff Experience Training**
+
+Your team is part of your brand. We train guest-facing staff on brand communication, hospitality standards, and guest experience delivery — so the brand promise holds at every human touchpoint.
+
+*Improves: guest experience consistency, review quality, repeat bookings*
+
+---
+
+## SECTION 6 — DONE FOR YOU PARTNERSHIP
+
+**Animation:**
+Full-width cinematic section. Background shifts to a slightly different dark tone (depth, not drama). Text appears in two columns on desktop. Left column: headline and body. Right column: the list of what PrymEdge manages. On scroll entry, left column translates in from left (40px), right column from right (40px), both fading in simultaneously. Feels like a reveal, not a pop-in.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+THE PARTNERSHIP
+
+**[HEADLINE — white, large]**
+You Run the Hotel.
+We Run the Growth.
+
+**[BODY — white at 65% opacity]**
+PrymEdge operates as your external growth and brand department. Not a vendor. Not a freelancer. A strategic partner embedded in your hotel's growth — without adding to your operational complexity.
+
+You focus on delivering exceptional hospitality.
+We handle everything that gets guests through your doors.
+
+**[RIGHT COLUMN — clean list with orange dot markers]**
+
+What PrymEdge manages for you:
+
+- Brand strategy and positioning
+- Content direction and storytelling systems
+- Paid advertising campaigns
+- Booking conversion optimization
+- Website and digital experience
+- Guest acquisition systems
+- Offer and revenue structure
+- Staff experience training
+- Monthly performance reviews and strategy updates
+
+**[CLOSING STATEMENT — full width, centered, larger white text]**
+Our partners don't manage marketing.
+They watch it work.
+
+---
+
+## SECTION 7 — LEAD MAGNETS
+
+**Animation:**
+Three cards in a row on desktop, stacked on mobile. Cards have a subtle inner glow on a slightly lighter dark background. On scroll entry, they stagger in (150ms apart). Each CTA button shifts orange on hover with a 200ms transition. No aggressive movement — these should feel like premium invitations, not ads.
+
+**Design note:** These are framed as exclusive resources, not freebies. The language positions PrymEdge as the one offering value, not chasing a lead.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+START HERE
+
+**[HEADLINE — white]**
+Three Ways to Begin
+Working With PrymEdge.
+
+---
+
+**[LEAD MAGNET 1]**
+**Free Hotel Brand & Booking Audit**
+
+We review your hotel's online presence, brand perception, and booking journey — then show you exactly where growth is being lost and what to fix first.
+
+No obligation. No templates. A real strategic review.
+
+**[CTA — orange button]**
+Request Your Free Audit
+
+---
+
+**[LEAD MAGNET 2]**
+**Hospitality Content Strategy Session**
+
+We map a content direction tailored to your property — designed to improve guest perception, strengthen your digital presence, and support direct bookings from the right audience.
+
+**[CTA — orange button]**
+Request Content Strategy
+
+---
+
+**[LEAD MAGNET 3]**
+**Revenue Growth Consultation**
+
+A focused conversation about where your hotel's revenue systems are underperforming — and how targeted improvements to acquisition, conversion, and brand can change the numbers.
+
+**[CTA — orange button]**
+Book Growth Consultation
+
+---
+
+## SECTION 8 — FINAL CTA
+
+**Animation:**
+Full-width section. Deep dark background. Single headline fades in, then body text, then button — each with 200ms stagger. Button pulses very gently once on entry (single slow scale from 1.0 to 1.02 and back, 1200ms, then stops). This draws the eye without feeling cheap.
+
+---
+
+**[HEADLINE — white, large, centered]**
+Your Hotel Deserves to Be
+as Good Online as It Is in Person.
+
+**[BODY — white at 65% opacity, centered]**
+PrymEdge works with hotels that are ready to close the gap between the experience they deliver and the one guests perceive online. If that is your hotel, we should talk.
+
+**[CTA — orange button, centered, slightly larger than usual]**
+Schedule a Strategy Conversation
+
+**[MICRO COPY below button — small, white at 40% opacity]**
+No commitment required. We start with a conversation.
+
+---
+
+## FAQ SECTION
+
+**Animation:**
+Clean accordion. Each question has a thin bottom border. On click: answer expands smoothly (450ms ease-out), the plus icon rotates 45 degrees to form an X. No reflow. Only one answer open at a time.
+
+---
+
+**[SECTION LABEL — small caps, orange]**
+COMMON QUESTIONS
+
+**[HEADLINE — white]**
+What Hotel Owners
+Usually Ask Us First.
+
+---
+
+**Q: Is PrymEdge a social media agency?**
+No. PrymEdge is a hospitality growth and brand systems company. Social media is one channel inside a larger system we build. We are not a posting service. We are a strategic growth partner.
+
+---
+
+**Q: Do we need a big marketing budget to work with you?**
+You need a willingness to invest in systems that compound over time. PrymEdge is not built for hotels looking for the cheapest option. We work with owners who understand that perception and brand directly affect revenue.
+
+---
+
+**Q: How involved does our team need to be?**
+Minimal. Your team handles daily operations. PrymEdge handles strategy, content direction, campaigns, and optimization. We are designed to reduce your workload, not add to it.
+
+---
+
+**Q: How long before we see results?**
+The 30-day audit gives you clarity immediately. The 90-day partnership builds the systems. Meaningful booking and revenue results typically develop within the first 60 to 90 days of active system implementation.
+
+---
+
+**Q: Do you work with hotels outside Nigeria?**
+PrymEdge is built to serve hospitality businesses across Africa and beyond. If your hotel operates in a market where perception, digital presence, and booking conversion matter — we can help.
+
+---
+
+**Q: What makes PrymEdge different from other marketing companies?**
+Most marketing companies manage tasks. PrymEdge builds systems. The difference is that tasks stop when the contract pauses. Systems compound when the contract continues. We measure ourselves against your revenue growth, not your follower count.
+
+---
+
+## FOOTER
+
+**Animation:**
+Footer fades in on page end. No motion beyond that. Clean, static, premium. Logo appears top left. Navigation links in a clean horizontal row. Social icons with subtle orange hover state.
+
+---
+
+**[LOGO — top left]**
+PrymEdge
+
+**[TAGLINE below logo — white at 50% opacity, small]**
+Hospitality Growth Systems
+
+---
+
+**[FOOTER NAVIGATION — horizontal, white at 70% opacity]**
+Home — Services — Contact
+
+---
+
+**[CONTACT COLUMN]**
+Ready to grow?
+[orange link] Schedule a Conversation
+
+---
+
+**[SOCIAL LINKS — minimal icons, white, orange on hover]**
+Instagram — LinkedIn
+
+---
+
+**[LEGAL LINE — bottom, white at 30% opacity, small]**
+© 2025 PrymEdge. All rights reserved. — Built for hospitality businesses ready to grow.
+
+---
+
+**[CLOSING BRAND STATEMENT — centered above legal line, white at 40% opacity, small italic]**
+*Perception builds desire. Desire drives bookings. Systems make it sustainable.*
+
+---
+
+That is the full homepage. Every section earns its place. The lead magnets are framed as exclusive entry points rather than freebies. The FAQ builds trust and handles objections without sounding defensive. The footer closes the experience with quiet authority.
+
+Ready to move to the Services page copy next, or do you want to refine anything here first?

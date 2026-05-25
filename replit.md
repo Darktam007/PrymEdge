@@ -1,45 +1,55 @@
-# [Project name]
+# PrymEdge
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A full marketing website for PrymEdge — a hospitality growth systems company that builds brand, acquisition, and conversion systems for hotels.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/prymedge run dev` — run the frontend (port assigned by workflow)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite, wouter (routing), framer-motion (animations)
+- Styling: Tailwind CSS v4, custom CSS variables, Playfair Display + Inter fonts
+- No backend — pure static frontend
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/prymedge/src/pages/` — Homepage, ServicesPage, ContactPage, not-found
+- `artifacts/prymedge/src/components/layout/` — Navbar, Footer (shared across all pages)
+- `artifacts/prymedge/src/components/ui/AnimatedSection.tsx` — shared scroll animation wrapper
+- `artifacts/prymedge/src/index.css` — full theme (HSL variables, Google Fonts, PrymEdge custom classes)
+- `attached_assets/` — logo images (referenced via @assets alias in vite.config.ts)
+
+## Pages
+
+- `/` — Homepage: hero, problem statement, 3-card how-we-do-it, PrymEdge system, services accordion, partnership, lead magnets, final CTA, FAQ
+- `/services` — Services: hero, positioning statement, 7-service deep accordion, engagement tiers (3)
+- `/contact` — Contact: hero, what-happens-next steps, full application form with validation + confirmation state, reassurance section
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Pure frontend, no API or database needed — the contact form simulates submission client-side
+- framer-motion `useInView` with `once: true` on all scroll animations — no element animates twice
+- Google Fonts imported as first line of index.css (before Tailwind) to avoid PostCSS silent failures
+- @assets alias in vite.config.ts points to attached_assets/ directory for logo imports
+- Dark-only site — both :root and .dark CSS classes have identical dark palette
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+PrymEdge is a hospitality growth agency website with three pages: a rich homepage, a deep services page with full service detail accordions and engagement tiers, and a contact/application page with form validation.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Orange accent: #F05A00
+- Headlines: Playfair Display (serif, editorial)
+- Body: Inter
+- Background: near-black #0a0a0a / section alt #0d0d0d / #111
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- Google Fonts @import MUST be the very first line in index.css
+- react-icons v5: use `FaInstagram`, `FaLinkedin` from `react-icons/fa` (not `SiInstagram`/`SiLinkedin` from `react-icons/si`)
+- The vite.config.ts has `@assets` alias pointing to `../../attached_assets/`
