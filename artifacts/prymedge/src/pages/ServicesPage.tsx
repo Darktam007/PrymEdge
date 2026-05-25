@@ -182,9 +182,15 @@ export default function ServicesPage() {
       {/* HERO */}
       <section
         ref={heroRef}
-        className="hero-bg"
-        style={{ minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}
+        style={{ minHeight: "80vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "7rem 1.5rem 4rem", position: "relative", overflow: "hidden", background: "#050505" }}
       >
+        <img
+          src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1600&auto=format&q=70"
+          alt="Hotel rooftop pool"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0, opacity: 0.55 }}
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.85) 100%)", zIndex: 1, pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 80% 40%, rgba(240,90,0,0.13) 0%, transparent 55%)", zIndex: 1, pointerEvents: "none" }} />
         <div style={{ maxWidth: "800px", textAlign: "center", position: "relative", zIndex: 2 }}>
           <motion.p
             initial={{ opacity: 0 }}
@@ -230,7 +236,7 @@ export default function ServicesPage() {
       </section>
 
       {/* POSITIONING STATEMENT */}
-      <section style={{ padding: "6rem 1.5rem", background: "#0d0d0d", textAlign: "center" }}>
+      <section style={{ padding: "6rem 1.5rem 0", background: "#0d0d0d", textAlign: "center" }}>
         <div style={{ maxWidth: "720px", margin: "0 auto" }}>
           <AnimatedSection>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.2, marginBottom: "1.5rem" }}>
@@ -242,6 +248,37 @@ export default function ServicesPage() {
               A brand system built correctly appreciates over years.<br />
               PrymEdge is in the business of the latter.
             </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* VISUAL BREAK — 3 images */}
+      <section style={{ background: "#0d0d0d", padding: "4rem 1.5rem" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.4fr 1fr", gap: "1rem", alignItems: "center" }}>
+          <AnimatedSection delay={0}>
+            <div style={{ borderRadius: "6px", overflow: "hidden", height: "240px" }}>
+              <img src="https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=600&auto=format&q=75" alt="Hotel hallway" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 600ms ease", filter: "brightness(0.85)" }}
+                onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
+                onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <div style={{ borderRadius: "6px", overflow: "hidden", height: "320px", position: "relative" }}>
+              <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?w=800&auto=format&q=75" alt="Hotel suite" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 600ms ease" }}
+                onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
+                onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)" }} />
+              <div style={{ position: "absolute", bottom: "1.25rem", left: "1.25rem" }}>
+                <span style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", fontStyle: "italic", color: "rgba(255,255,255,0.9)" }}>Systems, not tasks.</span>
+              </div>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div style={{ borderRadius: "6px", overflow: "hidden", height: "240px" }}>
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&auto=format&q=75" alt="Luxury hotel view" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 600ms ease", filter: "brightness(0.85)" }}
+                onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
+                onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -299,6 +336,24 @@ export default function ServicesPage() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FULL-WIDTH IMAGE BANNER */}
+      <section style={{ position: "relative", height: "380px", overflow: "hidden" }}>
+        <img
+          src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1600&auto=format&q=70"
+          alt="Luxury hotel lobby"
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.75) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", padding: "0 clamp(1.5rem, 8vw, 8rem)" }}>
+          <AnimatedSection>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#F05A00", marginBottom: "1rem" }}>How We Engage</p>
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.6rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.2, maxWidth: "540px" }}>
+              Choose how deeply<br />you want to grow.
+            </h2>
+          </AnimatedSection>
         </div>
       </section>
 

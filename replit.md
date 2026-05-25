@@ -17,39 +17,41 @@ A full marketing website for PrymEdge — a hospitality growth systems company t
 
 ## Where things live
 
-- `artifacts/prymedge/src/pages/` — Homepage, ServicesPage, ContactPage, not-found
-- `artifacts/prymedge/src/components/layout/` — Navbar, Footer (shared across all pages)
-- `artifacts/prymedge/src/components/ui/AnimatedSection.tsx` — shared scroll animation wrapper
+- `artifacts/prymedge/src/pages/` — HomePage, ServicesPage, ContactPage, not-found
+- `artifacts/prymedge/src/components/layout/` — Navbar, Footer
+- `artifacts/prymedge/src/components/ui/AnimatedSection.tsx` — AnimatedSection, AnimatedLine, ParallaxImage
+- `artifacts/prymedge/src/components/ui/WhatsAppButton.tsx` — floating WhatsApp button
 - `artifacts/prymedge/src/index.css` — full theme (HSL variables, Google Fonts, PrymEdge custom classes)
 - `attached_assets/` — logo images (referenced via @assets alias in vite.config.ts)
 
 ## Pages
 
-- `/` — Homepage: hero, problem statement, 3-card how-we-do-it, PrymEdge system, services accordion, partnership, lead magnets, final CTA, FAQ
-- `/services` — Services: hero, positioning statement, 7-service deep accordion, engagement tiers (3)
-- `/contact` — Contact: hero, what-happens-next steps, full application form with validation + confirmation state, reassurance section
+- `/` — Homepage: looping hotel video hero, problem statement, 3-card how-we-do-it, PrymEdge system, services accordion, partnership (with image), 3 lead magnet sections (each with image), final CTA, FAQ
+- `/services` — Services: image hero, positioning statement, 3-image gallery break, 7-service deep accordion, full-width banner image, engagement tiers
+- `/contact` — Contact: image hero, what-happens-next steps, application form (Formspree), reassurance section
 
 ## Architecture decisions
 
-- Pure frontend, no API or database needed — the contact form simulates submission client-side
-- framer-motion `useInView` with `once: true` on all scroll animations — no element animates twice
-- Google Fonts imported as first line of index.css (before Tailwind) to avoid PostCSS silent failures
-- @assets alias in vite.config.ts points to attached_assets/ directory for logo imports
+- Pure frontend, no API or database
+- Contact form posts to Formspree (https://formspree.io/f/xdkozwdz) — owner must verify email at formspree.io
+- ScrollToTop in App.tsx resets page position on every route change (instant scroll, no jank)
+- framer-motion `useInView` with `once: true` on all scroll animations
+- WhatsApp floating button appears after 2s delay, pulses on a 2.5s loop
+- Google Fonts @import MUST be the very first line in index.css (before Tailwind)
+- @assets alias in vite.config.ts points to `../../attached_assets/`
 - Dark-only site — both :root and .dark CSS classes have identical dark palette
-
-## Product
-
-PrymEdge is a hospitality growth agency website with three pages: a rich homepage, a deep services page with full service detail accordions and engagement tiers, and a contact/application page with form validation.
 
 ## User preferences
 
-- Orange accent: #F05A00
+- Orange accent: #F05A00 (logo orange)
+- Black: #0a0a0a background, #080808 footer
 - Headlines: Playfair Display (serif, editorial)
 - Body: Inter
-- Background: near-black #0a0a0a / section alt #0d0d0d / #111
+- Logos: `IMG_20260525_155551_052_*.png` (black/orange) used in both Navbar and Footer
 
 ## Gotchas
 
 - Google Fonts @import MUST be the very first line in index.css
-- react-icons v5: use `FaInstagram`, `FaLinkedin` from `react-icons/fa` (not `SiInstagram`/`SiLinkedin` from `react-icons/si`)
+- react-icons v5: use `FaInstagram`, `FaLinkedin`, `FaWhatsapp` from `react-icons/fa`
 - The vite.config.ts has `@assets` alias pointing to `../../attached_assets/`
+- Formspree form ID is `xdkozwdz` — owner needs to confirm their email on formspree.io to activate it

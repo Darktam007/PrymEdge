@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -7,18 +7,34 @@ interface AnimatedSectionProps {
   className?: string;
   style?: React.CSSProperties;
   threshold?: number;
+  direction?: "up" | "left" | "right" | "fade";
 }
 
-export function AnimatedSection({ children, delay = 0, className, style, threshold = 0.15 }: AnimatedSectionProps) {
+export function AnimatedSection({
+  children,
+  delay = 0,
+  className,
+  style,
+  threshold = 0.12,
+  direction = "up",
+}: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: threshold });
+
+  const variants = {
+    up:    { hidden: { opacity: 0, y: 30 },   visible: { opacity: 1, y: 0 } },
+    left:  { hidden: { opacity: 0, x: -30 },  visible: { opacity: 1, x: 0 } },
+    right: { hidden: { opacity: 0, x: 30 },   visible: { opacity: 1, x: 0 } },
+    fade:  { hidden: { opacity: 0 },           visible: { opacity: 1 } },
+  };
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants[direction]}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
       style={style}
     >
@@ -37,7 +53,7 @@ export function AnimatedLine({ horizontal = true, delay = 0 }: { horizontal?: bo
         ref={ref}
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay }}
         style={{ height: "1px", background: "rgba(240,90,0,0.4)", transformOrigin: "left center", flex: 1 }}
       />
     );
@@ -48,8 +64,24 @@ export function AnimatedLine({ horizontal = true, delay = 0 }: { horizontal?: bo
       ref={ref}
       initial={{ scaleY: 0 }}
       animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay }}
       style={{ width: "1px", background: "rgba(240,90,0,0.4)", transformOrigin: "top center", height: "48px", margin: "0 auto" }}
     />
+  );
+}
+
+export function ParallaxImage({ src, alt, style }: { src: string; alt: string; style?: React.CSSProperties }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
+  return (
+    <div ref={ref} style={{ overflow: "hidden", ...style }}>
+      <motion.img
+        src={src}
+        alt={alt}
+        style={{ width: "100%", height: "116%", objectFit: "cover", display: "block", y }}
+      />
+    </div>
   );
 }

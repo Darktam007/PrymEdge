@@ -84,12 +84,24 @@ export default function ContactPage() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (_data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     setSubmitting(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("https://formspree.io/f/xdkozwdz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Submission failed. Please try again or reach us on WhatsApp.");
+      }
+    } catch {
+      alert("Network error. Please try again.");
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-    }, 1200);
+    }
   };
 
   const steps = [
@@ -105,9 +117,16 @@ export default function ContactPage() {
       {/* HERO */}
       <section
         ref={heroRef}
-        style={{ minHeight: "70vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "7rem 1.5rem 4rem", background: "linear-gradient(180deg, #070707 0%, #0a0a0a 100%)" }}
+        style={{ minHeight: "70vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "7rem 1.5rem 4rem", position: "relative", overflow: "hidden", background: "#050505" }}
       >
-        <div style={{ maxWidth: "760px", textAlign: "center" }}>
+        <img
+          src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1600&auto=format&q=70"
+          alt="Hotel room desk"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0, opacity: 0.45 }}
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.9) 100%)", zIndex: 1, pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 20% 60%, rgba(240,90,0,0.12) 0%, transparent 50%)", zIndex: 1, pointerEvents: "none" }} />
+        <div style={{ maxWidth: "760px", textAlign: "center", position: "relative", zIndex: 2 }}>
           <motion.p
             initial={{ opacity: 0 }}
             animate={heroInView ? { opacity: 1 } : {}}
