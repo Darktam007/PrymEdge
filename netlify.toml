@@ -1,6 +1,10 @@
 [build]
   command = "pnpm --filter @workspace/prymedge run build"
-  publish = "artifacts/prymedge/dist"
+  publish = "artifacts/prymedge/dist/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  BASE_PATH = "/"
 
 [[redirects]]
   from = "/*"
