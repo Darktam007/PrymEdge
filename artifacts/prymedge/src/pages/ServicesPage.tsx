@@ -10,7 +10,7 @@ const ORANGE = "#F05A00";
 
 function WordReveal({ text, delay = 0 }: { text: string; delay?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: false, amount: 0.5 });
   const words = text.split(" ");
 
   return (
@@ -173,7 +173,7 @@ const cards = [
 
 export default function ServicesPage() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const heroInView = useInView(heroRef, { once: true });
+  const heroInView = useInView(heroRef, { once: false });
 
   return (
     <div style={{ background: "#0a0a0a", minHeight: "100vh" }}>
@@ -280,6 +280,55 @@ export default function ServicesPage() {
                 onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* WHO WE WORK WITH */}
+      <section style={{ padding: "6rem 1.5rem", background: "#0a0a0a" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <AnimatedSection>
+            <p className="eyebrow" style={{ marginBottom: "1rem" }}>Who We Work With</p>
+            <h2 className="section-headline" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: "1rem" }}>
+              Built for Hospitality Brands<br />That Want More.
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", color: "rgba(255,255,255,0.55)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: "560px", marginBottom: "3.5rem" }}>
+              PrymEdge works best with businesses that are serious about growth — not just visibility. If any of the following describes your situation, we should have a conversation.
+            </p>
+          </AnimatedSection>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.25rem" }}>
+            {[
+              { title: "Hospitality Brands That Want Steady Revenue", body: "Businesses tired of inconsistent bookings and unpredictable growth — ready to invest in systems that stabilize and improve revenue over time." },
+              { title: "Hospitality Brands That Want More Direct Bookings", body: "Businesses looking to reduce dependency on third-party booking platforms and build structured customer acquisition systems they own." },
+              { title: "Hospitality Brands That Want Stronger Positioning", body: "Businesses that want to look premium, memorable, and emotionally desirable — so the right guests choose them before the competition." },
+              { title: "Hospitality Brands That Want to Be Desired Emotionally", body: "Businesses that understand guests choose experiences before they make bookings — and want to build the perception that creates that desire." },
+              { title: "Hospitality Brands That Want Long-Term Brand Consistency", body: "Businesses looking to build structured systems that remain effective and consistent — regardless of internal staff changes or market shifts." },
+              { title: "Hospitality Brands Ready to Scale Strategically", body: "Businesses seeking structured, compounding growth systems instead of disconnected marketing activity that resets every month." },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <div
+                  style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "6px", padding: "2rem", height: "100%", boxSizing: "border-box", transition: "all 300ms ease" }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = "rgba(240,90,0,0.04)";
+                    el.style.borderColor = "rgba(240,90,0,0.28)";
+                    el.style.transform = "translateY(-4px)";
+                    el.style.boxShadow = "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(240,90,0,0.1)";
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = "rgba(255,255,255,0.02)";
+                    el.style.borderColor = "rgba(255,255,255,0.07)";
+                    el.style.transform = "translateY(0)";
+                    el.style.boxShadow = "none";
+                  }}
+                >
+                  <span style={{ display: "block", width: "28px", height: "2px", background: ORANGE, marginBottom: "1.25rem" }} />
+                  <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#f0f0f0", marginBottom: "0.75rem", lineHeight: 1.45 }}>{item.title}</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.8 }}>{item.body}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 

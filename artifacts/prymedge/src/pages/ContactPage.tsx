@@ -55,7 +55,7 @@ const errorStyle: React.CSSProperties = {
 
 function WordReveal({ text, delay = 0 }: { text: string; delay?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: false, amount: 0.5 });
   const words = text.split(" ");
   return (
     <span ref={ref} style={{ display: "inline" }}>
@@ -78,7 +78,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
-  const heroInView = useInView(heroRef, { once: true });
+  const heroInView = useInView(heroRef, { once: false });
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -137,21 +137,25 @@ export default function ContactPage() {
             Work With PrymEdge
           </motion.p>
 
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, marginBottom: "1.75rem" }}>
-            <WordReveal text="We Work With Hotels" delay={0.3} />
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.2rem, 5vw, 4rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, marginBottom: "1.75rem" }}>
+            <WordReveal text="We Partner With Hospitality Brands" delay={0.3} />
             <br />
-            <WordReveal text="That Are Ready to Grow." delay={0.55} />
+            <WordReveal text="That Want to Be Desired," delay={0.55} />
+            <br />
+            <WordReveal text="Remembered, and Booked Consistently." delay={0.8} />
           </h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={heroInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
             style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.85, maxWidth: "580px", margin: "0 auto" }}
           >
-            PrymEdge takes on a limited number of hospitality partners at any given time. Every engagement begins the same way — with a genuine conversation about your hotel, your challenges, and whether PrymEdge is the right fit to help you grow.
+            PrymEdge takes on a limited number of hospitality partners at any given time. Not every business that applies moves forward — we work only with brands that are genuinely committed to building something better.
             <br /><br />
-            If you believe your hotel deserves a stronger brand, more direct bookings, and a more intentional growth system — this is where that begins.
+            Every engagement begins the same way: a focused conversation about your specific revenue challenges, your positioning gaps, and what a structured growth system could realistically change for your business.
+            <br /><br />
+            If you want better revenue, stronger brand positioning, and more direct bookings — this is where that begins.
           </motion.p>
         </div>
       </section>
@@ -222,7 +226,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: false, amount: 0.1 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
               <form onSubmit={handleSubmit(onSubmit)} noValidate>

@@ -19,13 +19,13 @@ export function AnimatedSection({
   direction = "up",
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: threshold });
+  const inView = useInView(ref, { once: false, amount: threshold });
 
   const variants = {
-    up:    { hidden: { opacity: 0, y: 30 },   visible: { opacity: 1, y: 0 } },
-    left:  { hidden: { opacity: 0, x: -30 },  visible: { opacity: 1, x: 0 } },
-    right: { hidden: { opacity: 0, x: 30 },   visible: { opacity: 1, x: 0 } },
-    fade:  { hidden: { opacity: 0 },           visible: { opacity: 1 } },
+    up:    { hidden: { opacity: 0, y: 28 },  visible: { opacity: 1, y: 0 } },
+    left:  { hidden: { opacity: 0, x: -28 }, visible: { opacity: 1, x: 0 } },
+    right: { hidden: { opacity: 0, x: 28 },  visible: { opacity: 1, x: 0 } },
+    fade:  { hidden: { opacity: 0 },          visible: { opacity: 1 } },
   };
 
   return (
@@ -34,7 +34,7 @@ export function AnimatedSection({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={variants[direction]}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
       style={style}
     >
@@ -45,7 +45,7 @@ export function AnimatedSection({
 
 export function AnimatedLine({ horizontal = true, delay = 0 }: { horizontal?: boolean; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: false, amount: 0.5 });
 
   if (horizontal) {
     return (

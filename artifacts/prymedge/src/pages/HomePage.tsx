@@ -10,7 +10,7 @@ const ORANGE = "#F05A00";
 
 function WordReveal({ text, delay = 0 }: { text: string; delay?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: false, amount: 0.5 });
   const words = text.split(" ");
 
   return (
@@ -165,7 +165,7 @@ function FaqAccordion() {
 
 function PulseCTA() {
   const ref = useRef<HTMLButtonElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: false, amount: 0.5 });
   const pulsed = useRef(false);
 
   useEffect(() => {
@@ -202,7 +202,7 @@ function PulseCTA() {
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const heroInView = useInView(heroRef, { once: true });
+  const heroInView = useInView(heroRef, { once: false });
 
   const systems = [
     { num: "01", title: "Perception System", sub: "Brand & Identity", body: "Before a guest books, they form a judgment. We control what that judgment is. Brand positioning, visual identity, storytelling architecture, and emotional direction — designed to make your hotel feel like the obvious choice." },
@@ -263,9 +263,9 @@ export default function HomePage() {
           </motion.p>
 
           <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.8rem, 6vw, 5.5rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.08, marginBottom: "1.75rem" }}>
-            <WordReveal text="Your Hotel Is Better Than" delay={0.3} />
+            <WordReveal text="Your Hospitality Business" delay={0.3} />
             <br />
-            <WordReveal text="How It Looks Online." delay={0.6} />
+            <WordReveal text="Deserves Steady Revenue." delay={0.6} />
           </h1>
 
           <motion.div
@@ -274,9 +274,9 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 1.2 }}
           >
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(1rem, 2.5vw, 1.15rem)", color: "rgba(255,255,255,0.7)", lineHeight: 1.8, marginBottom: "2.5rem", maxWidth: "640px", margin: "0 auto 2.5rem" }}>
-              Most hotels lose bookings not because their rooms are lacking — but because their brand, story, and online presence fail to create desire before a guest ever arrives.
+              Most hospitality businesses are trapped in a cycle of inconsistent bookings and weak online perception — investing in marketing activity that produces no predictable results.
               <br /><br />
-              PrymEdge builds the systems that fix this.
+              The problem is rarely the property. The problem is the system — or the absence of one. PrymEdge builds the brand, acquisition, and conversion systems that create steadier revenue, stronger perception, and more direct bookings.
             </p>
           </motion.div>
 
@@ -364,6 +364,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ABOUT US */}
+      <section style={{ padding: "6rem 1.5rem", background: "#0a0a0a" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
+          <AnimatedSection direction="left">
+            <div style={{ position: "relative", borderRadius: "8px", overflow: "hidden", height: "clamp(300px, 45vw, 520px)" }}>
+              <img
+                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&auto=format&q=75"
+                alt="Premium hospitality environment"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.65) 100%)" }} />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection direction="right">
+            <p className="eyebrow" style={{ marginBottom: "1.25rem" }}>About PrymEdge</p>
+            <h2 className="section-headline" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", marginBottom: "1.75rem" }}>
+              We Don't Run Campaigns.<br />We Build Revenue Systems.
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem", marginBottom: "2.5rem" }}>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.85 }}>
+                PrymEdge is a hospitality growth and revenue systems partner. Not a marketing agency. Not a content studio. A strategic partner that works inside the specific commercial challenges that hospitality businesses face — and builds the systems that move revenue.
+              </p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.85 }}>
+                Most hospitality businesses lose revenue at the same three points: weak brand perception that fails to create emotional desire, no structured system for converting interest into direct bookings, and marketing activity that runs without a compounding strategy behind it.
+              </p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.85 }}>
+                PrymEdge exists to fix those three things. We combine brand positioning, content storytelling, conversion optimization, and customer acquisition into structured growth systems — built specifically for hospitality, built to run long-term.
+              </p>
+            </div>
+            <Link href="/contact">
+              <button
+                className="pe-btn-orange"
+                style={{ padding: "0.875rem 2rem", borderRadius: "4px", fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", cursor: "pointer", border: "none", textTransform: "uppercase" }}
+              >
+                Work With Us
+              </button>
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* HOW WE DO IT */}
       <section style={{ padding: "6rem 1.5rem", background: "#0a0a0a" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
@@ -401,6 +442,55 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO WE WORK WITH */}
+      <section style={{ padding: "6rem 1.5rem", background: "#0d0d0d" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <AnimatedSection>
+            <p className="eyebrow" style={{ marginBottom: "1rem" }}>Who We Work With</p>
+            <h2 className="section-headline" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: "1rem" }}>
+              Built for Hospitality Brands<br />That Want More.
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", color: "rgba(255,255,255,0.55)", fontSize: "0.95rem", lineHeight: 1.8, maxWidth: "560px", marginBottom: "3.5rem" }}>
+              PrymEdge works best with businesses that are serious about growth — not just visibility. If any of the following describes your situation, we should have a conversation.
+            </p>
+          </AnimatedSection>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.25rem" }}>
+            {[
+              { title: "Hospitality Brands That Want Steady Revenue", body: "Businesses tired of inconsistent bookings and unpredictable growth — ready to invest in systems that stabilize and improve revenue over time." },
+              { title: "Hospitality Brands That Want More Direct Bookings", body: "Businesses looking to reduce dependency on third-party booking platforms and build structured customer acquisition systems they own." },
+              { title: "Hospitality Brands That Want Stronger Positioning", body: "Businesses that want to look premium, memorable, and emotionally desirable — so the right guests choose them before the competition." },
+              { title: "Hospitality Brands That Want to Be Desired Emotionally", body: "Businesses that understand guests choose experiences before they make bookings — and want to build the perception that creates that desire." },
+              { title: "Hospitality Brands That Want Long-Term Brand Consistency", body: "Businesses looking to build structured systems that remain effective and consistent — regardless of internal staff changes or market shifts." },
+              { title: "Hospitality Brands Ready to Scale Strategically", body: "Businesses seeking structured, compounding growth systems instead of disconnected marketing activity that resets every month." },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <div
+                  style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "6px", padding: "2rem", height: "100%", boxSizing: "border-box", transition: "all 300ms ease" }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = "rgba(240,90,0,0.04)";
+                    el.style.borderColor = "rgba(240,90,0,0.28)";
+                    el.style.transform = "translateY(-4px)";
+                    el.style.boxShadow = "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(240,90,0,0.1)";
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = "rgba(255,255,255,0.02)";
+                    el.style.borderColor = "rgba(255,255,255,0.07)";
+                    el.style.transform = "translateY(0)";
+                    el.style.boxShadow = "none";
+                  }}
+                >
+                  <span style={{ display: "block", width: "28px", height: "2px", background: ORANGE, marginBottom: "1.25rem" }} />
+                  <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#f0f0f0", marginBottom: "0.75rem", lineHeight: 1.45 }}>{item.title}</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.8 }}>{item.body}</p>
                 </div>
               </AnimatedSection>
             ))}
